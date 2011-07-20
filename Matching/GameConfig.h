@@ -6,6 +6,17 @@
 //  Copyright Kuaitech 2011. All rights reserved.
 //
 
+
+#import <Foundation/Foundation.h>
+#import "cocos2d.h"
+#import "Menu.h"
+#import "MathBug.h"
+#import "SceneManager.h"
+#import "MoreGameScene.h"
+#import "Clouds.h"
+#import "SimpleAudioEngine.h"
+
+
 #ifndef __GAME_CONFIG_H
 #define __GAME_CONFIG_H
 
@@ -43,3 +54,19 @@
 
 #endif // __GAME_CONFIG_H
 
+extern ALuint soundID;
+
+@interface GameConfig : NSObject {
+    BOOL isPhone;
+    int level;
+    int type;   // add, sub or mixed
+}
+@property (assign) BOOL isPhone;
+@property (assign) int level;
+@property (assign) int type;
+
++(GameConfig*) game;
++(CGPoint)convertPoint:(CGPoint)point;
++(int) convertX: (int) xpos;
++(int) convertY:(int) ypos;
+@end
